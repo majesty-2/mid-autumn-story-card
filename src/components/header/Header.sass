@@ -1,0 +1,19 @@
+@import "../../assets/common"
+
+.header
+    font-family: serif
+    font-size: 48px
+    padding: 8px 0 20px 0
+    background-image: linear-gradient(to right, $deep-blue, $golden-yellow, $deep-red)
+    color: transparent
+    display: inline-block
+    -webkit-background-clip: text
+    text-shadow: 2px 2px 4px rgba(7, 243, 212, 0.4)
+    animation: gradientAnimation 1s linear infinite
+
+@keyframes gradientAnimation
+    0%, 100%
+        opacity: 1
+    50%
+        opacity: 0.8
+

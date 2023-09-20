@@ -1,0 +1,58 @@
+$deep-blue: #00205B
+$golden-yellow: #F3D000
+$deep-red: #A10808
+
+$light-blue: #3498db
+
+$deep-blue-start: #000080
+$deep-blue-end: #0000FF
+
+$golden-yellow-start: #FFD700
+$golden-yellow-end: #FFA500
+
+$deep-red-start: #8B0000
+$deep-red-end: #FF0000
+
+$font-size: 36px
+
+@media screen and (max-width: 420px) 
+    $font-size: 14px
+    .theme-card
+        font-size: $font-size
+    .story-card-title
+        font-size: 16px
+    .story-card-content
+        font-size: $font-size
+
+@media screen and (min-width: 500px) 
+    $font-size: 18px
+    .theme-card
+        font-size: $font-size
+    .story-card-title
+        font-size: 16px
+    .story-card-content
+        font-size: 14px
+    .theme-card-container
+        margin-bottom: 3em
+
+@media screen and (min-width: 750px) 
+    $font-size: 24px
+    .theme-card
+        font-size: $font-size
+    .story-card-title
+        font-size: 16px
+    .story-card-content
+        font-size: 14px
+    .theme-card-container
+        margin-bottom: 6em
+
+@media screen and (min-width: 1000px) 
+    $font-size: 36px
+    .theme-card
+        font-size: $font-size
+    .story-card-title
+        font-size: (2/3)*$font-size
+    .story-card-content
+        font-size: 0.5*$font-size
+    .theme-card-container
+        margin-bottom: 12em

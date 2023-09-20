@@ -1,0 +1,67 @@
+/* 灯笼容器 */
+.lantern-container
+  position: absolute
+  display: flex
+  flex-direction: column
+  align-items: center
+  z-index: 999
+  top: -80%
+  right: -0%
+  animation: lantern-float 2s ease-in-out infinite
+
+/* 灯笼把手 */
+.handle
+  width: 0.2em
+  height: 8.5em
+  background-color: #FFD700 
+  transform: rotate(74deg) translate(3.75em, -3.375em)
+  z-index: 999
+  &::before
+    content: ""
+    position: absolute
+    width: 0.6em
+    height: 0.6em
+    border-radius: 50%
+    background-color: #FFD700 
+    top: 100%
+    transform: translate(-0.2em, -0.1em)
+
+/* 灯笼串 */
+.lantern-string
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  opacity: 0.9
+
+/* 单个圆灯笼 */
+.lantern
+  width: 2em
+  height: 2em
+  background-color: #E63946
+  border-radius: 50%
+  margin: 0.375em 0
+  transform: perspective(7.5em) rotateX(30deg)
+  transform-origin: center bottom
+  animation: lantern-flashing 1s ease-in-out infinite
+  &::before
+    content: ""
+    display: inline-block
+    width: 0.15em
+    height: 2em
+    transform: translateY(-100%)
+    background-color: #E63946
+
+/* 添加风吹飘动的动画效果 */
+@keyframes lantern-float
+  0%, 100%
+    transform: translateX(0) 
+
+  50%
+    transform: translateX(-0.75em) 
+
+@keyframes lantern-flashing
+  0%, 100%
+    box-shadow: 0 0 3.75em 0.375em rgba(230, 57, 70, 0.4)
+  50%
+    box-shadow: 0 0 3.75em 0.375em rgba(230, 57, 70, 0.8)

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.sass';
+import StoryCard from './components/story-card/StoryCard';
+import ThemeCard from './components/theme-card/ThemeCard';
+import data from './assets/data.json'
+import Header from './components/header/Header';
+import Stars from './components/elemebts/Stars';
+import Moon from './components/elemebts/Moon';
 
 function App() {
+  const themes = data.storys.map(story => {
+    const {theme} = story
+    return <ThemeCard theme={theme} key={theme} />
+  })
+
+  const storys = data.storys.map(story => <StoryCard story={story} key={story.theme} />)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Moon />
+      <Stars />
+      <Header />
+      <div className="theme-card-container">
+       {themes}
+      </div>
+      <div className="story-card-container">
+       {storys}
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
